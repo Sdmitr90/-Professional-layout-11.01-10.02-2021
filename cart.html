@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOPPING CART</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-wrap">
+      <div class="logo">
+        <a href="#"><img src="img/header/logo.svg" alt="#"></a>
+        <a href="#"><img src="img/header/search.svg" alt="#"></a>
+      </div>
+
+      <div class="account">
+        <a href="#"><img src="img/header/burger.svg" alt="#"></a>
+        <a href="#"><img src="img/header/profile.svg" alt="#"></a>
+        <a href="#"><img src="img/header/busket.svg" alt="#"></a>
+        <div class="account_basket_circle"><span>5</span></div> 
+      </div>
+    </div>
+  </header>
+
+  <nav class="arrivals">
+    <div class="wrap arrivals-wrap">
+      <div class="left_head"><h1>SHOPPING CART</h1></div>
+      <div class="right_explorer"></div>
+    </div>   
+</nav>
+<section class="shopingCart">
+  <div class="wrap wrap-shopingCart">
+    <div class="shopingCart-carts">
+      <div class="shopingCart-carts-cart">
+        <div class="shopingCart-carts-cart__image">
+          <img src="img/products/Product3.png" alt="#">
+        </div>
+        <div class="shopingCart-carts-cart-description">
+          <p class="shopingCart-carts-cart-description__head">MANGO PEOPLE <nobr>T-SHIRT</nobr></p>
+          <p class="shopingCart-carts-cart-description__price">Price: <span>$300</span></p>
+          <p class="shopingCart-carts-cart-description__color">Color: <span>Red</span></p>
+          <p class="shopingCart-carts-cart-description__size">Size: <span>XI</span></p>
+          <fieldset class= "shopingCart-carts-cart-description-quantity">
+            <label class= "shopingCart-carts-cart-description-quantity__label">Quantity:<input class= "shopingCart-carts-cart-description-quantity__input" type="number" min="0" max="99"></label>
+          </fieldset>
+          <a href="#" class="shopingCart-carts-cart-description__close"></a>
+        </div>
+      </div>
+      <div class="shopingCart-carts-cart">
+        <div class="shopingCart-carts-cart__image">
+          <img src="img/products/Product7.png" alt="#">
+        </div>
+        <div class="shopingCart-carts-cart-description">
+          <p class="shopingCart-carts-cart-description__head">MANGO PEOPLE <nobr>T-SHIRT</nobr></p>
+          <p class="shopingCart-carts-cart-description__price">Price: <span>$300</span></p>
+          <p class="shopingCart-carts-cart-description__color">Color: <span>Red</span></p>
+          <p class="shopingCart-carts-cart-description__size">Size: <span>XI</span></p>
+          <fieldset class= "shopingCart-carts-cart-description-quantity">
+            <label class= "shopingCart-carts-cart-description-quantity__label">Quantity:<input class= "shopingCart-carts-cart-description-quantity__input" type="number" min="0" max="99"></label>
+          </fieldset>
+          <a href="#" class="shopingCart-carts-cart-description__close"></a>
+        </div>
+      </div>
+      <div class="shopingCart-carts-buttons">
+        <button class="shopingCart-carts-buttons__button">CLEAR SHOPPING CART</button>
+        <button class="shopingCart-carts-buttons__button">CONTINUE SHOPPING</button>
+      </div>
+    </div>
+    <div class="shopingCart-form">
+      <div class="shopingCart-form-shippingAdress">
+        <fieldset class="shopingCart-form-shippingAdress__fieldset">
+          <legend class="shopingCart-form-shippingAdress__legeng">SHIPPING ADRESS</legend>
+          <input  class="shopingCart-form-shippingAdress__input" type="text" placeholder="Bangladesh">
+          <input class="shopingCart-form-shippingAdress__input" type="text" placeholder="State">
+          <input class="shopingCart-form-shippingAdress__input" type="text" placeholder="Postcode / Zip">
+          <input class="shopingCart-form-shippingAdress__button" type="submit" value="GET A QUOTE">
+        </fieldset>
+      </div>
+      <div class="shopingCart-form-checkout">
+        <p class="shopingCart-form-checkout__subTotal">SUB TOTAL         <span>$900</span></p>
+        <p class="shopingCart-form-checkout__garndTotal">GRAND TOTAL      <span>$900</span></p>
+        <p class="shopingCart-form-checkout__underline"></p>
+        <button class="shopingCart-form-checkout__button">PROCEED TO CHECKOUT</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feedback">
+  <div class="feedback_background">
+  <div class="wrap feedback_wrap">
+   <div class="comment">
+     <img src="img/feedback/IntersectFeedBack.png" alt="#">
+     <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,<span> a pulvinar purus condimentum“</span></p>
+   </div>
+   <div class="subscribe">
+     <span>SUBSCRIBE<br></span> 
+      <span>FOR OUR NEWLETTER AND PROMOTION</span>
+      <form action="#"><input type="email" class="subscribe-mail" placeholder="Enter Your Email"><input type="submit" class="subscribe-button" value="Subscribe"></form>
+   </div>
+  </div>
+</div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer_wrap">
+    <div class="allRightReserved">
+    <span>&copy; 2021  Brand  All Rights Reserved.</span>
+  </div>
+  <div class="socialNetworks">
+    <div class="socialNetworks_img socialNetworks_img_facebook"><a href="#"><img src="img/footer/Facebook.svg" alt="#"></a></div>
+    <div class="socialNetworks_img socialNetworks_img_instagram "><a href="#"><img src="img/footer/Instagram.svg" alt="#"></a></div>
+    <div class="socialNetworks_img socialNetworks_img_p"><a href="#"><img src="img/footer/P.svg" alt="#"></a></div>
+    <div class="socialNetworks_img socialNetworks_img_twitter"><a href="#"><img src="img/footer/Twitter.svg" alt="#"></a></div>
+  </div>
+  </div>
+</footer>
+</body>
+</html>
