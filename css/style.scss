@@ -9,6 +9,23 @@
     width: 1140px;
     margin: 0 auto;
   }
+
+  a:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+  }
+  button:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    cursor: pointer;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  input[type=submit]:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    cursor: pointer;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
   .header {
     background: #222222;
   }
@@ -31,6 +48,17 @@
     align-items: center;
     width: 160px;
   }
+
+  .burger{
+  border: none;
+  background: none;
+  }
+  .burger:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.5s;
+  }
+ 
   .account_basket_circle{
     position: absolute;
     display: inline-block;
@@ -54,12 +82,15 @@
   }
   .promo-wrap{
     height: 765px;
-    background: linear-gradient(to right,rgba(113, 103, 105, 0.08) 50%, #F1E4E6 50%);
+    background: linear-gradient(to right,rgba(113, 103, 105, 0.0) 50%, #F1E4E6 50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .promo_image img{
+    animation: anim_2 3s 1;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
     margin-top: 5px;
   }
   
@@ -69,6 +100,27 @@
     margin-right: 100px;
     width: 405px;
     align-items: center;
+  }
+  @keyframes anim {
+   0% {margin-right: -1000px; opacity: 0; margin-top:-92px; transform: rotate(-90deg);}
+   20% {opacity: 1;}
+   50% {margin-right: 100px; margin-top:-110px; transform: scaleX(0.8);}
+   55% {transform: rotate(0deg);}
+   95% {transform: scaleY(0.8);}
+   100% {transform: scaleY(1);}  
+  }
+
+  @keyframes anim_2 {
+    0% { opacity: 0;}
+    90% {opacity: 0.8;}
+    100% {opacity: 1.0;}  
+   }
+
+  .promo_description{
+    animation: anim 3s 1;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+   
   }
   .promo_description_line{
     width: 12px;
@@ -96,7 +148,105 @@
   .promo_description_text p span:nth-child(3){
     color: rgba(241, 109, 127, 1);
     }
-  
+/*Overlay Promo*/  
+
+.overlay-promo {
+  z-index: 9;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  height: 765px;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 1;
+  transition: 0.5s;
+}
+.overlay-promo-open{
+  display: flex;
+}
+.overlay-promo-menu{
+  position: relative;
+  padding-top: 37px;
+  padding-left: 34px;
+  height: 765px;
+  width: 232px;
+  background: #FFFFFF;
+  list-style-type: none;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);;
+}
+.overlay-promo-menu__close{
+  padding: 0px;
+  border: none;
+  background: none;
+  right: 17px;
+  top: 16px;
+  position: absolute;
+  opacity: 1;
+}
+
+.overlay-promo-menu__close:hover {
+  opacity: 0.3;
+ }
+
+ .overlay-promo-menu__close:before, .overlay-promo-menu__close:after {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 2px;
+  background-color: #575757;
+  }
+
+  .overlay-promo-menu__close:before {
+  transform: rotate(45deg);
+  }
+
+  .overlay-promo-menu__close:after {
+  transform: rotate(-45deg);
+  }
+
+.overlay-promo-menu__head1{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px; 
+  color: #000000;
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay-promo-menu__head1::before{
+  content: none;
+  }
+
+.overlay-promo-menu__head2{
+  margin-top: 21px;
+  font-size: 14px;
+  color:#F16D7F;
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay-promo-menu-category{
+  list-style-type: none;
+  margin-top: 13px;
+  padding-left: 21.5px;
+}
+
+.overlay-promo-menu-category li{
+  margin-top: 12px;
+}
+
+.overlay-promo-menu-category li:nth-child(5){
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.overlay-promo-menu-category__list{
+  font-size: 14px;
+  color:#6F6E6E;
+  font-family: 'Lato', sans-serif;
+}
+
   .categories_wrap {
     margin-top: 63px;;
     display: flex;
@@ -130,6 +280,7 @@
     rgba(33, 22, 22, 0.7)
   ),url(../img/categories/ForWomen.png);
   }
+
   .categories_men{
   background-image:linear-gradient(
     rgba(33, 22, 22, 0.7),
@@ -196,6 +347,7 @@
   background: #F8F8F8;
   }
   
+
   .products_product:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -265,14 +417,24 @@
   .products_button_button{
     height: 47px;
     width: 211px;
-    outline: 1px solid #FF6A6A;
     border: none;
-    background: #fff;
-    color: #FF6A6A ;
+    background: #F16D7F;
+    color: #fff ;
     font-family: 'Lato', sans-serif;
       Font-size: 16px;
       Line-height: 19.2px;
   } 
+  .products_button_button:hover{
+    color: #F26376 ;
+    outline: 1px solid #FF6A6A;
+    background-color: #fff;;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    text-shadow:0px 4px 4px rgba(0, 0, 0, 0.25) ;
+    -webkit-transition:outline 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
+    -moz-transition:outline 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
+    -o-transition:outline 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s, color 0.5s;
+
+  }
   .advantages{
     background: #222224;
   }
@@ -407,7 +569,7 @@
     justify-content: space-between;
     width: 147.66px;
   }
-  .socialNetworks_img{
+  .socialNetworks-img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -415,23 +577,19 @@
     width: 31.45px;
     background-color: #FFFFFF;
   }
-  .socialNetworks_img_facebook{
-    padding-top: 4px;
+  .socialNetworks-img a{
+    height: 15px;
   }
-  .socialNetworks_img_instagram{
-    padding-top: 5px;
-    background-color: #FFFFFF;
+
+.socialNetworks-img__badge{
+  fill:black;
+}
+.socialNetworks-img:hover{ 
+  .socialNetworks-img__badge{
+    fill: white ;
   }
-  .socialNetworks_img_instagram img{
-    filter: brightness(0%);
-  }
-  .socialNetworks_img_p{
-    padding-top: 5px;
-  }
-  .socialNetworks_img_twitter{
-    padding-top: 5px;
-  }
-  
+  background-color: #F16D7F ;
+}   
   /*Блок страницы Каталога*/
   
   /*Блок страницы Каталога*/
@@ -445,6 +603,11 @@
     height: 148px;
     background-color: #F8F3F4;
   }
+  
+  a {
+    text-decoration: none;
+  }
+
   .arrivals-wrap{
     height: 148px;
     background-color: #F8F3F4;
@@ -458,14 +621,17 @@
   font-family: 'Lato', sans-serif;
   color: #F16D7F;
   }
-  .right_explorer p{
+  .right_explorer__p{
   Font-size: 14px;
   Line-height: 16.8px;
   font-weight: 300;
   font-family: 'Lato', sans-serif;
   color: #636363;
   }
-  .right_explorer span{
+  .right_explorer__p a{
+    color: #636363;
+    }
+  .right_explorer__span{
     Font-size: 14px;
     Line-height: 16.8px;
     font-weight: 700;
@@ -501,7 +667,7 @@
   }
   
   .details_filter{
-    z-index: 9;
+    z-index: 8;
     position: relative;
   }
   .details_filter[open] ul{
@@ -674,6 +840,10 @@
       display: flex;
       
   }
+  .pagination:hover{
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25) ;
+    transition: box-shadow 0.5s;
+  }
   .page-link{
     position: relative;
     display: block;
@@ -690,6 +860,10 @@
       Font-size: 16px;
       Line-height: 19px;
       text-decoration: none;
+  }
+  .page-link__leftRight {
+    Font-size: 14px;
+    color: black;
   }
   .page-item{
     text-align:none;
@@ -1145,3 +1319,126 @@ color: #F16D7F;
   border: none;
 }
 
+/*Блок страницы Регистрации*/
+
+/*Блок страницы Регистрации*/
+
+/*Блок страницы Регистрации*/
+
+/*Блок страницы Регистрации*/
+
+
+.wrap-registration{
+display: flex;
+justify-content: space-between;
+}
+
+.registration-form {
+  margin-top: 64px;
+  width: 360px;
+}
+
+.registration-form__fieldset{
+margin: 0;
+padding: 0px;
+border: none;
+}
+
+.registration-form__legeng{
+  padding: 0px;
+  margin-top: 35px;
+  Font-size: 16px;
+  Line-height: 19px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  color: #222222;
+}
+
+ @mixin text-style-registration__input(){
+  Font-size: 13px;
+  Line-height: 16px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+ }
+
+.registration-form__input {
+  width: 358px;
+  height: 45px;
+  border: none;
+  outline: 1px solid #A4A4A4;
+  margin-top: 20.5px;
+  @include text-style-registration__input;
+  color: #222222;
+  padding-left: 17.24px;
+}
+
+.registration-form__input::placeholder{
+  @include text-style-registration__input;
+  color: #B1B1B1;
+} 
+.registration-form__labelInput{
+  margin-right:20px ;
+  Font-size: 11px;
+  Line-height: 13.2px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+}
+.registration-form__labelInput::before{
+  content: none;
+}
+
+.registration-form__radioInput{
+  vertical-align: bottom;
+  margin-top: 31.5px;
+  width: 17px;
+  height: 17px;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.registration-form__button {
+  padding: 0;
+  margin-top: 24px;
+  margin-bottom: 96px;
+  width: 167px;
+  height: 50px;
+  border: none;
+  outline:  none;
+  background: #F16D7F;
+  Font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+.registration-form__button::after{
+  content: "\2192";
+  font-size: 17px;
+  padding-left: 20px;
+}
+.registration-form__button:hover{
+  cursor: pointer;
+}
+.registration-form__text {
+  @include text-style-registration__input;
+  color: #B1B1B1;
+  margin-top: 15px;
+}
+
+.registration-loyalty{
+  margin-top: 64px;
+  width: 652px;
+}
+.registration-loyalty__head, .registration-loyalty__text, .registration-loyalty__promotion{
+  margin: 0;
+  Font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 22px;
+}
+.registration-loyalty__promotion{
+  margin-bottom: 16px ;
+}
+.registration-loyalty__promotion::before{
+  content: "\2713";
+  margin-right: 22px;
+}
