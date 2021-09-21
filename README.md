@@ -1,2 +1,1 @@
-# HomeWorkGB_SkvortsovDO
-HomeWorkGB_SkvortsovDO
+Верстка Интернет-Магазина
